@@ -1,0 +1,24 @@
+<%- layout('/layouts/boilerplate') %>
+
+<h1>This is index page</h1>
+
+<% for (let project of projects) {%>
+<div class="card mb-3">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%- project.title %></h5>
+        <p class="card-text"><%- project.description %></p>
+        <p class="card-text">
+          <small class="text-muted"><%- project.tags %></small>
+        </p>
+        <a href="/projects/<%= project._id %> " class="btn btn-primary"
+          >more details</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<% } %>
