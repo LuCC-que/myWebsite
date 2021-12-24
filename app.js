@@ -41,7 +41,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(methodOverride("_method"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: true })); //parse the project url
 
 const secret = process.env.SECRET || "thiscanbebetter";
@@ -86,13 +86,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
 app.use("/", usersRoutes);
 app.use("/projects", projects);
 app.use("/projects/:id/reviews", reviews);
-
-app.get("/", (req, res) => {
-  res.send("Home page is still no ready yet :(");
-});
 
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));

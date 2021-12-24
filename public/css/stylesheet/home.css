@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+main {
+  padding: 0;
+}
+
+.title {
+  width: 100vw;
+  height: 100vh;
+}
+
+.AboutMe {
+  background-color: #000000;
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.AboutMeText {
+  color: white;
+  padding-left: 33%;
+  padding-right: 33%;
+}
+
+.waveUp {
+  width: 100%;
+}
+
+.waveDown {
+  width: 100%;
+}
