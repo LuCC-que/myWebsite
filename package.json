@@ -21,6 +21,7 @@
     "express-session": "^1.17.2",
     "flash": "^1.1.0",
     "joi": "^17.4.2",
+    "mdb-ui-kit": "^3.10.1",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.12",
     "multer": "^1.4.3",
