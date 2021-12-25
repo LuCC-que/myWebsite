@@ -1,0 +1,44 @@
+.main-items-logo {
+  background-color: #d62828;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 100%;
+}
+
+.logo-anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  color: white;
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: 400ms;
+  font-size: x-large;
+}
+
+.logo-arrow {
+  position: relative;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+  transform: rotate(0deg);
+  left: 0px;
+  transition: 600ms;
+}
+
+.navbar:hover .logo-arrow {
+  left: 55px;
+  transform: rotate(-180deg);
+}
+
+.navbar:hover .logo-text {
+  left: 23px;
+}

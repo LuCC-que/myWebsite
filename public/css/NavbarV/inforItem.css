@@ -1,0 +1,39 @@
+.info-items,
+.setting-item {
+  /* background-color: #fcbf49; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-items-list {
+  position: relative;
+  left: 0;
+  padding: auto;
+  height: 100%;
+  transition: 600ms;
+}
+
+.info-items-list svg {
+  height: 3.5rem;
+  width: 1rem;
+  min-width: 1.5rem;
+  margin: 0rem 1.5rem;
+  transition: 100ms;
+}
+
+.navbar:hover .info-items-list {
+  left: 27%;
+}
+
+.navbar:hover .info-items-list svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.setting-item svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}

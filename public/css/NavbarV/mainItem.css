@@ -1,0 +1,31 @@
+.main-items-rest {
+  /* background-color: aqua; */
+  /* background-color: #f77f00; */
+  flex-grow: 999;
+}
+
+.nav-items-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.nav-item svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item-text {
+  display: none;
+}
+
+.navbar:hover .nav-item-text {
+  display: contents;
+}
