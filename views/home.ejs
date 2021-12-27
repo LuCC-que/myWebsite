@@ -1,32 +1,23 @@
 <%- layout('/layouts/boilerplate2') %>
-
-<Section class="title">
-  <div>
-    <h1>Lu Chen</h1>
-  </div>
+<Section class="Introduction">
+  <h1 class="content">
+    <span class="row1">Hello,</span>
+    <span class="row2">My name is Lu,</span>
+    <span class="row3">I'm a <span>student</span> </span>
+  </h1>
 </Section>
 
-<section class="AboutMe">
-  <img class="waveDown" src="svg/abourmeWave.svg" alt="" />
-  <div class="AboutMeText">
-    <h1>About Me</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto animi
-      voluptates blanditiis velit dolorem, eum veritatis illum reiciendis itaque
-      ducimus omnis dignissimos ratione facilis quaerat, sed sapiente ab nostrum
-      cupiditate. Quisquam ullam quis corrupti quaerat reprehenderit alias
-      eaque. Modi eveniet unde mollitia laudantium maiores, eum porro
-      voluptatibus ratione provident sapiente eligendi, fuga libero, repellat
-      non quia velit quis veritatis. Temporibus. Labore, laborum. Doloremque
-      quas assumenda dolore corporis necessitatibus eum voluptas voluptate
-      praesentium, corrupti unde, velit, nemo repudiandae alias tempora
-      repellendus consectetur accusamus accusantium est non! Saepe modi a
-      nostrum itaque.
-    </p>
+<Section class="About-me" id="About-me">
+  <div class="left">
+    <h1>About me</h1>
+    <h1>G</h1>
   </div>
-  <img class="waveUp" src="svg/aboutmeWave2.svg" alt="" />
-</section>
+  <div class="right"></div>
+</Section>
 
-<section class="Current Progress">
-  <div></div>
-</section>
+<Section class="current-progress" id="current-progress">
+  this is my progress
+</Section>
+<%- include('./project2/index.ejs') %>
+
+<Section class="contact" id="contact">this is my contact </Section>

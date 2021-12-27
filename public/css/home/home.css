@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.About-me {
+  height: 80vh;
+  width: 100%;
+}
+
+.current-progress {
+  height: 60vh;
+  background-color: pink;
+}
+
+.project {
+  height: 80vh;
+  background-color: coral;
+}
+
+.contact {
+  height: 40vh;
+  background-color: darkgreen;
+}

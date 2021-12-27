@@ -1,0 +1,22 @@
+.Introduction {
+  height: 100vh;
+  width: 100%;
+  background-color: #0f4c5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Introduction .content {
+  background-color: brown;
+  height: 33%;
+  margin-left: 13%;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.Introduction .content span {
+  font-family: "Open Sans", Courier, monospace;
+  font-size: 5rem;
+  color: white;
+}

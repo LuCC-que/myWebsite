@@ -5,6 +5,7 @@ if (process.env.NODE_ENV != "production") {
 console.log(process.env.SECRET);
 
 const express = require("express");
+const catchAsyncError = require("./utils/catchAsyncError");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const path = require("path");
@@ -17,6 +18,7 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const usersRoutes = require("./routes/user");
 const projects = require("./routes/projects");
+const Project = require("./models/project");
 const reviews = require("./routes/reviews");
 const MongoDBStore = require("connect-mongo");
 //process.env.DB_URL;
@@ -86,9 +88,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+app.get(
+  "/",
+  catchAsyncError(async (req, res) => {
+    const projects = await Project.find({});
+    console.log(projects);
+    res.render("home", { projects });
+  })
+);
 
 app.use("/", usersRoutes);
 app.use("/projects", projects);

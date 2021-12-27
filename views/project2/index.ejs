@@ -1,0 +1,20 @@
+<Section class="project" id="project">
+  <h1>this is my project<% %></h1>
+  <section class="card-list">
+    <% for (let project of projects) {%>
+    <a class="card" href="">
+      <header class="card-header">
+        <h2><%- project.title %></h2>
+        <p><%- project.description %></p>
+      </header>
+      <div class="author-name">
+        <div class="author-name-prefix">Author</div>
+        Lu Chen
+      </div>
+      <div class="image">
+        <img src="/svg/avatar.jpg" alt="lol" />
+      </div>
+    </a>
+    <% } %>
+  </section>
+</Section>

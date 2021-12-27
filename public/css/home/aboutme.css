@@ -1,0 +1,22 @@
+.About-me {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.left {
+  background-color: #e36414;
+}
+
+.right {
+  background-color: #e36414;
+}
+
+.left h1 {
+  margin-top: 33%;
+  margin-left: 33%;
+}
+
+.left G {
+  display: block;
+  margin-left: 33%;
+}
