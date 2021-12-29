@@ -3,7 +3,6 @@ const Joi = require("joi");
 module.exports.projectSchema = Joi.object({
   project: Joi.object({
     title: Joi.string().required(),
-    tags: Joi.string().required(),
     link: Joi.string().required(),
     description: Joi.string().required(),
   }).required(),

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema({
   title: String,
-  tags: String,
+  tags: [],
   images: [
     {
       url: String,
@@ -12,6 +12,7 @@ const ProjectSchema = new Schema({
     },
   ],
   link: String,
+  breif: String,
   description: String,
   author: {
     type: Schema.Types.ObjectId,

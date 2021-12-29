@@ -9,44 +9,9 @@ const upload = multer({ storage });
 
 const router = express.Router();
 
-router.get("/test", (req, res) => {
-  res.send("hit!!");
-});
+router.get("/test", (req, res) => res.send("hit!!"));
 
-router.get(
-  "/",
-  catchAsyncError(async (req, res) => {
-    const projects = await Project.find({});
-    res.render("projects/index", { projects });
-  })
-);
-
-router.get("/new", vetloggedIn, (req, res) => {
-  res.render("projects/new");
-});
-
-// router.post("/", upload.array("image"), (req, res) => {
-//   console.log(req);
-//   res.send("hit");
-// });
-
-router.post(
-  "/",
-  vetProject,
-  vetloggedIn,
-  upload.array("image"),
-  catchAsyncError(async (req, res) => {
-    const project = new Project(req.body.project);
-    project.images = req.files.map((f) => ({
-      url: f.path,
-      filename: f.filename,
-    }));
-    project.author = req.user._id;
-    await project.save();
-    req.flash("success", "A new project is posted successfully");
-    res.redirect(`/projects/${project._id}`);
-  })
-);
+router.get("/new", (req, res) => res.render("project2/new"));
 
 router.get(
   "/:id",
@@ -64,14 +29,32 @@ router.get(
       req.flash("error", "project does not exist");
       return res.redirect("/projects");
     }
-    res.render("projects/show", { project });
+    res.render("project2/show", { project });
+  })
+);
+
+router.post(
+  "/",
+  vetloggedIn,
+  upload.array("image"),
+  catchAsyncError(async (req, res) => {
+    console.log(req.body);
+    const project = new Project(req.body.project);
+    console.log(req.files);
+    project.images = req.files.map((f) => ({
+      url: f.path,
+      filename: f.filename,
+    }));
+    // project.author = req.user._id;
+    await project.save();
+    req.flash("success", "A new project is posted successfully");
+    res.redirect(`/projects/${project._id}`);
   })
 );
 
 router.get(
-  "/:id/edit",
+  "/:id/e",
   vetloggedIn,
-  vetAuthor,
   catchAsyncError(async (req, res) => {
     const { id } = req.params;
     const project = await Project.findById(id);
@@ -79,27 +62,27 @@ router.get(
       req.flash("error", "project does not exist");
       return res.redirect("/projects");
     }
-    res.render("projects/edit", { project });
+    res.render("project2/edit", { project });
   })
 );
 
 router.put(
   "/:id",
-  vetProject,
   vetloggedIn,
-  vetAuthor,
   upload.array("image"),
   catchAsyncError(async (req, res) => {
     const { id } = req.params;
     const project = await Project.findByIdAndUpdate(id, {
       ...req.body.project,
     });
-    const imgs = req.files.map((f) => ({
-      url: f.path,
-      filename: f.filename,
-    }));
 
-    project.images.push(...imgs);
+    if (req.files) {
+      project.images = req.files.map((f) => ({
+        url: f.path,
+        filename: f.filename,
+      }));
+    }
+
     await project.save();
     req.flash("success", "The project is updated!");
     res.redirect(`/projects/${project._id}`);
@@ -109,13 +92,12 @@ router.put(
 router.delete(
   "/:id",
   vetloggedIn,
-  vetAuthor,
   catchAsyncError(async (req, res) => {
     const { id } = req.params;
     await Project.findByIdAndDelete(id);
     req.flash("success", "The project is deleted!");
     delete req.session.returnTo;
-    res.redirect("/projects");
+    res.redirect("/");
   })
 );
 

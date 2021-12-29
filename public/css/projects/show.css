@@ -1,0 +1,65 @@
+.imageH {
+  height: 40vh;
+  width: 100%;
+  background-image: url("../../svg/nancy.jpg");
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.imageH h1 {
+  background-color: transparent;
+  margin: 0 0 1rem 14rem;
+  font-size: 40px;
+}
+
+.content-show {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-columns: 1.25fr 1fr 1.25fr;
+  padding-top: 3rem;
+}
+
+.col1 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.col1 ul {
+  list-style: none;
+
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 4rem 2.5rem 0 0;
+}
+
+.lineV {
+  margin: 4.5rem 1rem 0 0;
+  height: 15rem;
+  width: 0;
+  border-left: 0.1px solid grey;
+}
+
+.col1 ul span {
+  font-size: 20px;
+  color: black;
+}
+
+.col2 div h1 {
+  /* background-color: brown; */
+  font-size: 30px;
+}
+
+.col2 div p {
+  /* background-color: red; */
+  margin: 0 1rem 0 1rem;
+}
+
+.col3 {
+  padding: 4rem 0 0 1.5rem;
+}

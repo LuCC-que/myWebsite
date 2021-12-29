@@ -16,11 +16,17 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
-const usersRoutes = require("./routes/user");
-const projects = require("./routes/projects");
+const usersRoutes = require("./routes/oldEntry/user");
+const projects = require("./routes/oldEntry/projects");
+const reviews = require("./routes/oldEntry/reviews");
+const projectRoute = require("./routes/projects");
 const Project = require("./models/project");
-const reviews = require("./routes/reviews");
 const MongoDBStore = require("connect-mongo");
+const { render } = require("ejs");
+const multer = require("multer");
+const { storage } = require("./cloudinary/index");
+const upload = multer({ storage });
+const { vetloggedIn, vetAuthor } = require("./middlewares");
 //process.env.DB_URL;
 const dbURL = process.env.DB_URL || "mongodb://localhost:27017/projects";
 console.log(dbURL);
@@ -44,6 +50,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/node_modules")));
 app.use(express.urlencoded({ extended: true })); //parse the project url
 
 const secret = process.env.SECRET || "thiscanbebetter";
@@ -97,6 +104,7 @@ app.get(
   })
 );
 
+app.use("/project2", projectRoute);
 app.use("/", usersRoutes);
 app.use("/projects", projects);
 app.use("/projects/:id/reviews", reviews);

@@ -17,14 +17,19 @@ mongoose
 const seedProject = [
   {
     title: "project1",
-    tags: "OOB1",
+    tags: ["OOb1", "Oob2", "oob3"],
     images: [
+      {
+        url: "https://source.unsplash.com/collection/483251",
+        filename: "test1",
+      },
       {
         url: "https://source.unsplash.com/collection/483251",
         filename: "test1",
       },
     ],
     link: "https://www.queensu.ca/",
+    breif: "make it short",
     description:
       "This is asdhasioludhiuewof biuowecn idsnbf ciouewncd kjsdn klds ",
     author: "619473dfa60d4421d032395d",
@@ -32,29 +37,39 @@ const seedProject = [
 
   {
     title: "project2",
-    tags: "OOB2",
+    tags: ["OOb1", "Oob2", "oob3"],
     images: [
+      {
+        url: "https://source.unsplash.com/collection/483251",
+        filename: "test1",
+      },
       {
         url: "https://source.unsplash.com/collection/483251",
         filename: "test1",
       },
     ],
     link: "https://www.queensu.ca/",
+    breif: "make it short",
     description:
-      "This is asdhasioludhiuewof biuowecn idsnbf ciouewncd kjsdn klds ",
+      "This is asdhasioludhiuewof biuowecn idsnbf ciouewncd kjsdn klds This is asdhasioludhiuewof biuowecn idsnbf ciouewncd kjsdn kldsThis is asdhasioludhiuewof biuowecn idsnbf ciouewncd kjsdn klds",
     author: "619473dfa60d4421d032395d",
   },
 
   {
     title: "project3",
-    tags: "OOB3",
+    tags: ["OOb1", "Oob2", "oob3"],
     images: [
+      {
+        url: "https://source.unsplash.com/collection/483251",
+        filename: "test1",
+      },
       {
         url: "https://source.unsplash.com/collection/483251",
         filename: "test1",
       },
     ],
     link: "https://www.queensu.ca/",
+    breif: "make it short",
     description:
       "This is asdhasioludhiuewof biuowecn idsnbf ciouewncd kjsdn klds ",
     author: "619473dfa60d4421d032395d",

@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  background-color: #003049;
+  background-color: #293241;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -64,13 +64,13 @@ main {
 }
 
 .p-pri {
-  color: #fcbf49;
+  color: #f1faee;
 }
 
 .nav-item-text {
   display: inline;
   position: absolute;
-  color: #eae2b7;
+  color: #e0fbfc;
 }
 
 @media only screen and (max-width: 1000px) {

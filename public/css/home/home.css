@@ -15,15 +15,33 @@ body {
 
 .current-progress {
   height: 60vh;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .project {
   height: 80vh;
-  background-color: coral;
+  /* background-color: coral; */
 }
 
 .contact {
   height: 40vh;
   background-color: darkgreen;
 }
+
+#particles-js {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: #001219;
+  background-image: url("");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* #particles-js canvas {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+} */

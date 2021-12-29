@@ -1,0 +1,78 @@
+<%- layout('/layouts/boilerplate2') %>
+<section style="display: flex">
+  <h1>edit the project</h1>
+  <div>
+    <form
+      action="/project2/<%= project.id %>?_method=PUT"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="title">
+        <input
+          type="text"
+          name="project[title]"
+          size="50"
+          placeholder="title"
+          value="<%= project.title %>"
+        />
+      </div>
+      <input type="file" name="image" id="" multiple />
+      <div class="link">
+        <input
+          type="text"
+          name="project[link]"
+          size="50"
+          placeholder="link to project"
+          value="<%= project.link %>"
+        />
+      </div>
+      <div class="breif">
+        <textarea
+          type="text"
+          id="description"
+          name="project[breif]"
+          cols="30"
+          rows="10"
+          placeholder="breif"
+        >
+<%= project.breif %></textarea
+        >
+      </div>
+      <div class="description">
+        <textarea
+          type="text"
+          id="description"
+          name="project[description]"
+          cols="30"
+          rows="10"
+          placeholder="description"
+        >
+<%= project.description %></textarea
+        >
+      </div>
+      <div class="wrapper">
+        <div id="survey_options">
+          <% for (let tag of project.tags) {%>
+          <input
+            type="text"
+            name="project[tags][]"
+            class="survey_options"
+            size="50"
+            placeholder="input your tag "
+            value="<%= tag %> "
+          />
+          <% } %>
+        </div>
+        <div class="controls">
+          <a href="#" id="add_more_fields"
+            ><i class="fa fa-plus"></i>Add More</a
+          >
+          <a href="#" id="remove_fields"
+            ><i class="fa fa-plus"></i>Remove Field</a
+          >
+        </div>
+      </div>
+      <button class="btn btn-success">Add Project</button>
+    </form>
+  </div>
+</section>

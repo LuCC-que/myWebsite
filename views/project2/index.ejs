@@ -1,11 +1,11 @@
 <Section class="project" id="project">
-  <h1>this is my project<% %></h1>
+  <div class="project-title"><h1>My Projects</h1></div>
   <section class="card-list">
     <% for (let project of projects) {%>
-    <a class="card" href="">
+    <a class="card" href="/project2/<%= project._id %>">
       <header class="card-header">
         <h2><%- project.title %></h2>
-        <p><%- project.description %></p>
+        <p><%- project.breif %></p>
       </header>
       <div class="author-name">
         <div class="author-name-prefix">Author</div>
