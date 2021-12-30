@@ -1,65 +1,122 @@
-.imageH {
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.page-header {
+  background-image: url("../../svg/policy.jpg");
+  background-size: cover;
+  background-position-y: center;
+  width: 100%;
   height: 40vh;
-  width: 100%;
-  background-image: url("../../svg/nancy.jpg");
-  background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-.imageH h1 {
+.page-header h5 {
   background-color: transparent;
-  margin: 0 0 1rem 14rem;
-  font-size: 40px;
+  text-align: center;
+  font-size: 3.5rem;
 }
 
-.content-show {
-  display: grid;
+.project article {
+  /* background-color: brown; */
+  width: 80%;
   height: 100vh;
-  width: 100%;
-  grid-template-columns: 1.25fr 1fr 1.25fr;
-  padding-top: 3rem;
 }
 
-.col1 {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.col1 ul {
-  list-style: none;
-
-  height: 15%;
+.project-show-content {
+  height: 100%;
+  margin-top: 2.5%;
+  /* background-color: aquamarine; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-end;
-  margin: 4rem 2.5rem 0 0;
+  align-items: center;
 }
 
-.lineV {
-  margin: 4.5rem 1rem 0 0;
-  height: 15rem;
-  width: 0;
-  border-left: 0.1px solid grey;
+.project-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background-color: blueviolet; */
 }
 
-.col1 ul span {
-  font-size: 20px;
-  color: black;
+.project-demon-header {
+  width: 100%;
+  /* background-color: aqua; */
 }
 
-.col2 div h1 {
+.project-demon {
+  position: relative;
+}
+
+.project-demon-title {
+  font-size: 180%;
+  text-align: center;
+  margin: 0 3rem 0 3rem;
+  padding: 0 3rem 0 3rem;
+}
+
+.project-demon::before {
+  display: block;
+  content: "";
+  width: 25vw;
+  height: 1px;
+  border-top: solid black;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+}
+
+.project-demon::after {
+  display: block;
+  content: "";
+  width: 25vw;
+  height: 1px;
+  border-top: solid black;
+  position: absolute;
+  top: 50%;
+  right: 8%;
+}
+
+.project-description p {
+  margin: 1rem 20rem 0 20rem;
+  font-size: 1.5rem;
+}
+
+.project-tag {
+  /* background-color: rebeccapurple; */
+  width: 50%;
+  height: 15vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5%;
+}
+
+.project-tag-col1 {
   /* background-color: brown; */
-  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.col2 div p {
-  /* background-color: red; */
-  margin: 0 1rem 0 1rem;
+.tag-wrap {
+  height: 30%;
 }
 
-.col3 {
-  padding: 4rem 0 0 1.5rem;
+.project-tag-col2 {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.project-tag-col2 span {
+  height: 30%;
 }

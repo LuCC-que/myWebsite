@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.current-progress-content trim {
+.current-progress-content section {
   height: 100%;
   width: 80%;
   /* background-color: black; */
@@ -26,14 +26,19 @@
   position: relative;
 }
 
-.curpro-col1:before {
+.curpro-col1 header {
+  position: relative;
+  width: 150%;
+}
+
+.curpro-col1 header:before {
+  display: block;
   position: absolute;
-  top: 11%;
-  left: 10px;
   content: "";
-  width: 6px;
-  height: 72px;
-  background-color: #e3872d;
+  height: 80%;
+  border-left: 5px solid orange;
+  top: 10%;
+  left: -4%;
 }
 
 .curpro-col1 h1 {

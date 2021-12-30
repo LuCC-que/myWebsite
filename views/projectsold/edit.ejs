@@ -1,10 +1,9 @@
 <%- layout('/layouts/boilerplate') %>
-
 <div class="row">
+  <h1 class="text-center">This is editing page</h1>
   <div class="col-6 offset-3">
-    <h1>This is new page</h1>
     <form
-      action="/projects"
+      action="/project/<%= project.id %>?_method=PUT"
       method="POST"
       class="needs-validation"
       novalidate
@@ -17,18 +16,20 @@
           type="text"
           id="title"
           name="project[title]"
+          value="<%= project.title %>"
           required
         />
         <div class="valid-feedback">Looks good!</div>
       </div>
       <input type="file" name="image" id="" multiple />
       <div class="mb-3">
-        <label class="form-label" for="location">tags</label>
+        <label class="form-label" for="tags">tags</label>
         <input
           class="form-control"
           type="text"
-          id="location"
+          id="tags"
           name="project[tags]"
+          value="<%=project.location %>"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -40,20 +41,23 @@
           type="text"
           id="image"
           name="project[image]"
+          value="<%=project.image %>"
           required
         />
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
-        <label class="form-label" for="image">Link</label>
-        <input
-          class="form-control"
-          type="text"
-          id="image"
-          name="project[link]"
-          required
-        />
-        <div class="valid-feedback">Looks good!</div>
+        <label class="form-label" for="link">link</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="link"
+            name="project[link]"
+            value="<%= project.link %>"
+            required
+          />
+        </div>
       </div>
 
       <div class="mb-3">
@@ -64,10 +68,14 @@
           id="description"
           name="project[description]"
           required
-        ></textarea>
-        <div class="valid-feedback">Looks good!</div>
+        >
+<%= project.description%></textarea
+        >
       </div>
-      <button class="btn btn-success">Add Project</button>
+      <div class="mb-3">
+        <button class="btn btn-info">Update Campground</button>
+      </div>
     </form>
+    <a href="/project/<%= project._id%>">Back To Campground</a>
   </div>
 </div>

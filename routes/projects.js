@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get("/test", (req, res) => res.send("hit!!"));
 
-router.get("/new", (req, res) => res.render("project2/new"));
+router.get("/new", (req, res) => res.render("project/new"));
 
 router.get(
   "/:id",
@@ -29,7 +29,7 @@ router.get(
       req.flash("error", "project does not exist");
       return res.redirect("/projects");
     }
-    res.render("project2/show", { project });
+    res.render("project/show", { project });
   })
 );
 
@@ -48,7 +48,7 @@ router.post(
     // project.author = req.user._id;
     await project.save();
     req.flash("success", "A new project is posted successfully");
-    res.redirect(`/projects/${project._id}`);
+    res.redirect(`/projectsold/${project._id}`);
   })
 );
 
@@ -62,7 +62,7 @@ router.get(
       req.flash("error", "project does not exist");
       return res.redirect("/projects");
     }
-    res.render("project2/edit", { project });
+    res.render("project/edit", { project });
   })
 );
 

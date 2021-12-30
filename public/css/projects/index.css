@@ -1,9 +1,9 @@
-.project {
+.project-content-home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 85vh;
 }
 
 .project-title {
@@ -17,13 +17,13 @@
 }
 
 .project-title:before {
+  display: block;
   position: absolute;
-  top: 23%;
-  left: -2px;
   content: "";
-  width: 6px;
-  height: 72px;
-  background-color: #e3872d;
+  height: 60%;
+  border-left: 5px solid orange;
+  top: 20%;
+  right: 99.3%;
 }
 .card-list {
   display: flex;

@@ -28,7 +28,7 @@ const { storage } = require("./cloudinary/index");
 const upload = multer({ storage });
 const { vetloggedIn, vetAuthor } = require("./middlewares");
 //process.env.DB_URL;
-const dbURL = process.env.DB_URL || "mongodb://localhost:27017/projects";
+const dbURL = "mongodb://localhost:27017/projects";
 console.log(dbURL);
 //"mongodb://localhost:27017/projects"
 
@@ -104,7 +104,7 @@ app.get(
   })
 );
 
-app.use("/project2", projectRoute);
+app.use("/project", projectRoute);
 app.use("/", usersRoutes);
 app.use("/projects", projects);
 app.use("/projects/:id/reviews", reviews);

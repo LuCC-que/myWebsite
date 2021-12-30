@@ -1,0 +1,32 @@
+<%- layout('/layouts/boilerplate2') %>
+<section class="project">
+  <header class="page-header">
+    <h5><%= project.title%></h5>
+  </header>
+  <article>
+    <div class="project-show-content">
+      <div class="project-description">
+        <p><%= project.description%></p>
+      </div>
+      <div class="project-tag">
+        <div class="project-tag-col1">
+          <h1>What I used in this project?</h1>
+          <div class="tag-wrap">
+            <% for(tag of project.tags){ %> <span><%= tag %> </span>
+            <% } %>
+          </div>
+        </div>
+        <div class="project-tag-col2">
+          <h1>Find the source code at</h1>
+          <span><%= project.link %></span>
+        </div>
+      </div>
+
+      <header class="project-demon-header">
+        <div class="project-demon">
+          <h5 class="project-demon-title">Demonstration</h5>
+        </div>
+      </header>
+    </div>
+  </article>
+</section>

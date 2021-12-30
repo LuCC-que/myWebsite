@@ -17,7 +17,7 @@ router.get(
   "/",
   catchAsyncError(async (req, res) => {
     const projects = await Project.find({});
-    res.render("projects/index", { projects });
+    res.render("projectsold/index", { projects });
   })
 );
 router.post(
@@ -35,11 +35,11 @@ router.post(
     project.author = req.user._id;
     await project.save();
     req.flash("success", "A new project is posted successfully");
-    res.redirect(`/projects/${project._id}`);
+    res.redirect(`/projectsold/${project._id}`);
   })
 );
 router.get("/new", (req, res) => {
-  res.render("projects/new");
+  res.render("projectsold/new");
 });
 
 // router.post("/", upload.array("image"), (req, res) => {
@@ -63,7 +63,7 @@ router.get(
       req.flash("error", "project does not exist");
       return res.redirect("/projects");
     }
-    res.render("projects/show", { project });
+    res.render("projectsold/show", { project });
   })
 );
 
@@ -77,7 +77,7 @@ router.get(
       req.flash("error", "project does not exist");
       return res.redirect("/projects");
     }
-    res.render("projects/edit", { project });
+    res.render("projectsold/edit", { project });
   })
 );
 
@@ -98,7 +98,7 @@ router.put(
     project.images.push(...imgs);
     await project.save();
     req.flash("success", "The project is updated!");
-    res.redirect(`/projects/${project._id}`);
+    res.redirect(`/projectsold/${project._id}`);
   })
 );
 

@@ -1,14 +1,19 @@
 <%- layout('/layouts/boilerplate2') %>
 <section style="display: flex">
-  <h1>Dynamic Fields Javascript</h1>
+  <h1>edit the project</h1>
   <div>
-    <form action="/project2" method="POST" enctype="multipart/form-data">
+    <form
+      action="/project/<%= project.id %>?_method=PUT"
+      method="POST"
+      enctype="multipart/form-data"
+    >
       <div class="title">
         <input
           type="text"
           name="project[title]"
           size="50"
           placeholder="title"
+          value="<%= project.title %>"
         />
       </div>
       <input type="file" name="image" id="" multiple />
@@ -18,6 +23,7 @@
           name="project[link]"
           size="50"
           placeholder="link to project"
+          value="<%= project.link %>"
         />
       </div>
       <div class="breif">
@@ -28,7 +34,9 @@
           cols="30"
           rows="10"
           placeholder="breif"
-        ></textarea>
+        >
+<%= project.breif %></textarea
+        >
       </div>
       <div class="description">
         <textarea
@@ -38,17 +46,22 @@
           cols="30"
           rows="10"
           placeholder="description"
-        ></textarea>
+        >
+<%= project.description %></textarea
+        >
       </div>
       <div class="wrapper">
         <div id="survey_options">
+          <% for (let tag of project.tags) {%>
           <input
             type="text"
             name="project[tags][]"
             class="survey_options"
             size="50"
-            placeholder="tag"
+            placeholder="input your tag "
+            value="<%= tag %> "
           />
+          <% } %>
         </div>
         <div class="controls">
           <a href="#" id="add_more_fields"

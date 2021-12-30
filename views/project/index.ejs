@@ -1,8 +1,8 @@
-<Section class="project" id="project">
-  <div class="project-title"><h1>My Projects</h1></div>
+<Section class="project-content-home" id="project">
+  <div class="project-title"><h1>Some of my projects</h1></div>
   <section class="card-list">
     <% for (let project of projects) {%>
-    <a class="card" href="/project2/<%= project._id %>">
+    <a class="card" href="/project/<%= project._id %>">
       <header class="card-header">
         <h2><%- project.title %></h2>
         <p><%- project.breif %></p>
